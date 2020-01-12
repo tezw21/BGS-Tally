@@ -9,10 +9,7 @@ from theme import theme
 
 this = sys.modules[__name__]	# For holding module globals
 
-this.MissionPoints =0
-this.TradeProfit =0
-this.BountiesCollected =0
-this.CartDataSold=0
+
 
 
 def plugin_prefs(parent, cmdr, is_beta):
@@ -149,7 +146,8 @@ def journal_entry(cmdr, is_beta, system, station, entry, state):
    if entry['event'] =='RedeemVoucher' and entry['Type'] == 'bounty': # bounties collected
       for z in entry['Factions']:
          if z['Faction'].lower() == this.FactionName.get().lower() and this.SystemName.get().lower() == system.lower():
-            this.BountiesCollected.set(this.BountiesCollected.get + z['Amount'])
+            Bounty = z['Amount']
+            this.BountiesCollected.set(this.BountiesCollected.get() + Bounty)
             this.bountiescollected2['text'] = format(this.BountiesCollected.get() ,',d')
 
       
