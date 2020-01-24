@@ -9,7 +9,7 @@ from theme import theme
 import webbrowser
 
 this = sys.modules[__name__]	# For holding module globals
-this.VersionNo = "1.2"
+this.VersionNo = "1.2.1"
 
 
 def plugin_prefs(parent, cmdr, is_beta):
