@@ -186,7 +186,7 @@ def journal_entry(cmdr, is_beta, system, station, entry, state):
           this.tradeprofit2["text"] = this.TradeProfit.get()
           this.missioninf3["text"] = human_format(this.YesterdayMP.get())
           this.tradeprofit3["text"] = human_format(this.YesterdayTP.get())
-          this.Bountiescollected3["text"] = human_format(this.YesterdayBC.get())
+          this.bountiescollected3["text"] = human_format(this.YesterdayBC.get())
           this.cartdata3["text"] = human_format(this.YesterdayCD.get())
           print("Tick auto reset happened")
       print(this.LastTick.get())
