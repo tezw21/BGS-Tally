@@ -9,7 +9,7 @@ from theme import theme
 import webbrowser
 
 this = sys.modules[__name__]	# For holding module globals
-this.VersionNo = "1.2.1"
+this.VersionNo = "1.2.2"
 
 
 def plugin_prefs(parent, cmdr, is_beta):
@@ -60,27 +60,10 @@ def plugin_start(plugin_dir):
    this.YesterdayBC = tk.IntVar(value=config.getint("YBounties"))
    this.YesterdayCD = tk.IntVar(value=config.getint("YCartData"))
    # this.LastTick.set("12")
-   # check for tick update and reset counters
-   response = requests.get('https://elitebgs.app/api/ebgs/v4/ticks')
-   tick = response.json()
-   this.CurrentTick = tick[0]['_id']
-   if this.LastTick.get() != this.CurrentTick:
-       this.YesterdayMP.set(this.MissionPoints.get())
-       this.YesterdayTP.set(this.TradeProfit.get())
-       this.YesterdayBC.set(this.BountiesCollected.get())
-       this.YesterdayCD.set(this.CartDataSold.get())
-       this.MissionPoints.set(0)
-       this.TradeProfit.set(0)
-       this.BountiesCollected.set(0)
-       this.CartDataSold.set(0)
-       print("Tick auto reset happened")
-   print(this.LastTick.get())
-   print(this.CurrentTick)
+
    response = requests.get('https://api.github.com/repos/tezw21/BGS-Tally/releases/latest')
    latest = response.json()
    this.GitVersion = latest['tag_name']
-
-
 
    return "BGS Tally"
 
@@ -168,6 +151,7 @@ def journal_entry(cmdr, is_beta, system, station, entry, state):
       sa = entry['SystemAddress']
       if system.lower() == this.SystemName.get().lower():  # set system address if system monitored
          this.SystemAddress.set(sa)
+      #  tick check and counter reset
       response = requests.get('https://elitebgs.app/api/ebgs/v4/ticks')  # get current tick and reset if changed
       tick = response.json()
       this.CurrentTick = tick[0]['_id']
@@ -241,14 +225,3 @@ def human_format(num):
         magnitude += 1
         num /= 1000.0
     return '{}{}'.format('{:f}'.format(num).rstrip('0').rstrip('.'), ['', 'K', 'M', 'B', 'T'][magnitude])
-         
-         
-
-
-         
-      
-               
-            
-            
-                   
-
