@@ -16,3 +16,4 @@ Only four positive actions are counted at the moment. Mission inf + , Total trad
 
 The data is now saved locally. The counters will auto reset on Tick. Yesterday column has been added so that counters can be recored after Tick
 Users will also be notifed if a new version is avalible.
+It is recommendes that EDMC is started before Elite Dangerous as some events happen at start up which are useful to capture. If EDMC is not started before hand the tick detect will not happen until your first docking after the tick.
