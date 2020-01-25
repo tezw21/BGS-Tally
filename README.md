@@ -15,5 +15,7 @@ Once the Faction and System has been set the user needs to dock or launch and re
 Only four positive actions are counted at the moment. Mission inf + , Total trade profit sold to Faction controlled station, Cartographic data sold to Faction controlled station, Bounties issued by named Faction. These total during the session and are reloaded at restart
 
 The data is now saved locally. The counters will auto reset on Tick. Yesterday column has been added so that counters can be recored after Tick
+
 Users will also be notifed if a new version is avalible.
-It is recommendes that EDMC is started before Elite Dangerous as some events happen at start up which are useful to capture. If EDMC is not started before hand the tick detect will not happen until your first docking after the tick.
+
+It is recommendend that EDMC is started before Elite Dangerous as some events happen at start up which are useful to capture. If EDMC is not started before hand the tick detect will not happen until your first docking after the tick.
