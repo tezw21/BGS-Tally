@@ -9,7 +9,7 @@ from theme import theme
 import webbrowser
 
 this = sys.modules[__name__]	# For holding module globals
-this.VersionNo = "1.2.2"
+this.VersionNo = "1.2.3"
 
 
 def plugin_prefs(parent, cmdr, is_beta):
@@ -155,6 +155,8 @@ def journal_entry(cmdr, is_beta, system, station, entry, state):
       response = requests.get('https://elitebgs.app/api/ebgs/v4/ticks')  # get current tick and reset if changed
       tick = response.json()
       this.CurrentTick = tick[0]['_id']
+      print(this.LastTick.get())
+      print(this.CurrentTick)
       if this.LastTick.get() != this.CurrentTick:
           this.YesterdayMP.set(this.MissionPoints.get())
           this.YesterdayTP.set(this.TradeProfit.get())
@@ -172,9 +174,9 @@ def journal_entry(cmdr, is_beta, system, station, entry, state):
           this.tradeprofit3["text"] = human_format(this.YesterdayTP.get())
           this.bountiescollected3["text"] = human_format(this.YesterdayBC.get())
           this.cartdata3["text"] = human_format(this.YesterdayCD.get())
+          this.LastTick.set(this.CurrentTick)
           print("Tick auto reset happened")
-      print(this.LastTick.get())
-      print(this.CurrentTick)
+
       this.StationFaction.set(sf['Name'])  # set controlling faction name
 
    if entry['event'] == 'MissionCompleted':  # get mission influence value
