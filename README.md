@@ -2,7 +2,7 @@
 A simple plugin for EDMC to count BGS work
 
 # Please Note that this version has been Deprecated
-New version with more features at [BGS Tally v2](https://github.com/tezw21/BGS-Tally/releases/tag/1.2.3)
+New version with more features at [BGS Tally v2](https://github.com/tezw21/BGS-Tally-v2.0)
 
 # Installation
 Download the [latest release](https://github.com/tezw21/BGS-Tally/releases/tag/1.2.3) of BGS Tally
