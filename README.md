@@ -1,6 +1,9 @@
 # BGS-Tally
 A simple plugin for EDMC to count BGS work
 
+# Please Note that this version has been Deprecated
+New version with more features at BGS Tally V2(
+
 # Installation
 Download the [latest release](https://github.com/tezw21/BGS-Tally/releases/tag/1.2.3) of BGS Tally
  - In EDMC, on the Plugins settings tab press the “Open” button. This reveals the plugins folder where this app looks for plugins.
